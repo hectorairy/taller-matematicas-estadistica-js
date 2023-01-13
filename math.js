@@ -43,6 +43,12 @@ const calcularAlturaTriangulo = (lado1, lado2, base) => {
   };
 };
 
+const calcularAlturaTrianguloEsc = (lado1, lado2, lado3) => {
+  if (lado1 === lado2 || lado2 === lado3 || lado3 === lado1) return false;
+  const s = (lado1 + lado2 + lado3) / 2;
+  return (2 / lado1) * Math.sqrt(s * (s - lado1) * (s - lado2) * (s - lado3));
+};
+
 console.log({
   ladoTriangulo1,
   ladoTriangulo2,
