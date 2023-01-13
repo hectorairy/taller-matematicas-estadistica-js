@@ -35,6 +35,14 @@ const calcularTriangulo = (lado1, lado2, base, altura) => {
   };
 };
 
+const calcularAlturaTriangulo = (lado1, lado2, base) => {
+  if (lado1 !== lado2) return "Los lados deben de ser iguales";
+  if (base === lado1) return "La base no puede ser igual a los otros lados";
+  return {
+    altura: Math.sqrt(Math.pow(lado1, 2) - Math.pow(base, 2) / 4),
+  };
+};
+
 console.log({
   ladoTriangulo1,
   ladoTriangulo2,
@@ -45,3 +53,31 @@ console.log({
 });
 
 console.groupEnd("Triángulo");
+
+console.group("Circulo");
+
+const radioCirculo = 3;
+const diametroCirculo = radioCirculo * 2;
+const PI = 3.1415;
+
+const circunferenciaCirculo = diametroCirculo * PI;
+const areaCirculo = radioCirculo ** 2 * PI;
+
+function calcularCirculo(radio) {
+  const diametro = radio * 2;
+  const radioAlCuadrado = Math.pow(radio, 2);
+
+  return {
+    circunferencia: diametro * Math.PI,
+    area: radioAlCuadrado * Math.PI,
+  };
+}
+
+console.log({
+  radioCirculo,
+  diametroCirculo,
+  PI,
+  circunferenciaCirculo,
+  areaCirculo,
+});
+console.groupEnd("Circulo");
